@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  display: block;
+  text-align: center;
+}
+
+.container {
+  display: block;
+  padding: 0 auto ;
+  margin: 0 auto;
+  text-align: center;
+  background-color: black;
+  width: 559px;
+  height: 570px;
+}
+
+.grids {
+  display: inline-block;
+  background-color: white;
+  width: 32.8%;
+  height: 32.8%;
+  border: 2px solid black;
+  padding: 10px;
+} 
+
+.grids:hover{
+  background-color: lightgrey;
+}
+
+.X {
+  background-image: url('images/cross.png');
+  background-size: 175px 175px;
+  background-repeat: no-repeat;
+}
+
+.O {
+  background-image: url('images/circle.png');
+  background-size: 175px 175px;
+  background-repeat: no-repeat;
+}
+
+.message {
+  display: flex;
+  font-size: 28px;
+  color: purple;
+  justify-content: center;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  height: 35px;
+  width: 100px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+
+footer {
+  text-align: center;
+  margin: 25px auto;
+}
