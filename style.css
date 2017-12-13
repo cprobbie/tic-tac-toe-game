@@ -5,10 +5,18 @@
 h1 {
   display: block;
   text-align: center;
+  margin: 10px auto;
 }
 
 .container {
-  display: block;
+  display: flex;
+  margin: 0 auto;
+  width: 900px;
+  justify-content: center;
+}
+
+.board {
+  display: inline-block;
   padding: 0 auto ;
   margin: 0 auto;
   text-align: center;
@@ -31,19 +39,65 @@ h1 {
 }
 
 .X {
-  background-image: url('images/cross.png');
+  background-image: url('images/naruto-logo.png');
   background-size: 175px 175px;
   background-repeat: no-repeat;
 }
 
+
 .O {
-  background-image: url('images/circle.png');
-  background-size: 175px 175px;
+  background-image: url('images/sasuke-logo.png');
+  background-size: 180px 180px;
   background-repeat: no-repeat;
+}
+
+.p1, .p2 {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  width: 150px;
+  height: 120px;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+h3 {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+p {
+  font-size: 20px;
+  margin: 5px auto;
+}
+
+span {
+  font-size: 20px;
+}
+
+img {
+  display: block;
+  height: 300px;
+  width: 106px;
+  margin: 0 auto;
+}
+
+.token {
+  display: block;
+  height: 90px;
+  width: 90px;
+  margin: 0 auto;
+}
+
+#headerPic {
+  display: block;
+  height: 50px;
+  width: 100%;
 }
 
 .message {
   display: flex;
+  margin: 15px auto;
   font-size: 28px;
   color: purple;
   justify-content: center;
