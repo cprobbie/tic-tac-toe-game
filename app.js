@@ -11,6 +11,8 @@ var message = document.querySelector(".message");
 var restart = document.querySelector("button");
 var p1Score = document.querySelector(".p1 span");
 var p2Score = document.querySelector(".p2 span");
+var p1Block = document.querySelector(".p1");
+var p2Block = document.querySelector(".p2");
 
 
 var p1ScoreCount = 0; 
@@ -24,11 +26,16 @@ var hasWinner = false;
 var swapPlayer = function () {
   if (turnCounter % 2 === 1) {
     turnCounter++;
+    p1Block.style.backgroundColor = "yellow";
+    p2Block.style.backgroundColor = "white";
     return player = 1;
   } else {
     turnCounter++;
+    p2Block.style.backgroundColor = "yellow";
+    p1Block.style.backgroundColor = "white";   
     return player = 2;
-  }   
+  }
+  
 }
 var areEqual = function (a, b, c) {
   if (a === b && b === c) {
@@ -45,7 +52,7 @@ var determineWinner = function(result, symbol) {
     || areEqual(result[1], result[4], result[7]) || areEqual(result[2], result[5], result[8])
     || areEqual(result[0], result[4], result[8]) || areEqual(result[2], result[4], result[6])) {
     console.log(symbol + ' is the winner, this is the end of the game, thank you for playing.');
-    message.textContent = 'Winner: ' + symbol + ' -------- This is the end of the game, thank you for playing.'
+    message.textContent = 'Winner: ' + symbol + ' --- This is the end of the game, thank you for playing.'
     return hasWinner = true;
    } else if (turnCounter === 9) {
     console.log('Game Draw! This is the end of the game, thank you for playing.');
@@ -84,19 +91,22 @@ var display = function (gridObj, playerNum) {
       p2ScoreCount++;
       p2Score.textContent = p2ScoreCount;
     }
-}
+    return symbol
+  }
+
 var clearAll = function(){
   for (var i = 0; i < grids.length; i++) {
     grids[i].classList.remove("X");
     grids[i].classList.remove("O");
     result = ['0', '1', '2', '3', '4', '5', '6', '7', '8'];
     turnCounter = 0;
-    player = 1;
     hasWinner = false;
     message.textContent = 'Welcome to the Game again. Enjoy!'
   }
 }
 ///////////////////////
+
+
 for (var i = 0; i < grids.length; i++) {
   grids[i].addEventListener('click', function(){
   if (!hasWinner && this.classList.length === 1) {display(this, player);}

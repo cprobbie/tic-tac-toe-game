@@ -107,6 +107,8 @@ img {
   font-size: 28px;
   color: purple;
   justify-content: center;
+  border: 2px solid grey;
+  border-radius: 10px;
 }
 
 button {
