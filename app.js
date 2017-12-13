@@ -59,7 +59,8 @@ var display = function (gridObj, playerNum) {
   } else {    
     gridObj.classList.add("O");
     var symbol = 'O';
-  }
+  } 
+
 //    logResults(gridNum, playerNum);
     swapPlayer();
     logResults(gridObj, symbol);
@@ -72,7 +73,7 @@ var display = function (gridObj, playerNum) {
       result[i] = symbol;  
     }    
   }
-  console.log(result);
+    console.log(result);
     if (turnCounter > 4 && hasWinner === false) {
     return determineWinner(result, symbol);
   }
@@ -92,9 +93,8 @@ var clearAll = function(){
 ///////////////////////
 
 for (var i = 0; i < grids.length; i++) {
-  console.log(grids[i]); 
   grids[i].addEventListener('click', function(){
-  display(this, player);
+  if (!hasWinner && this.classList.length === 1) {display(this, player);}
  });
 }
 restart.addEventListener('click', clearAll);
