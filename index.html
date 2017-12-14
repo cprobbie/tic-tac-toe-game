@@ -8,8 +8,18 @@
 </head>
 <body>
   <header><img id="headerPic" src="images/headerPic.jpg" alt=""><h1>tic-tac-toe Game</h1></header>
+  <div id="overlay">
+    <div class="charContainer">
+      <div class="title"><h3>Please Select Your Avatars</h3><button>Play</button></div>
+      <div class="charP1" id="char1">P1<img src="images/naruto-head.png" alt=""><span>Naruto</span></div>
+      <div class="charP1" id="char2">P1<img src="images/sakura-head.jpg" alt=""><span>Sakura</span></div> 
+      <div class="charP2" id="char3">P2<img src="images/sasuke-head.png" alt=""><span>Sasuke</span></div>
+      <div class="charP2" id="char4">P2<img src="images/kakashi-head.jpg" alt=""><span>Kakashi</span></div>
+    </div>
+</div>
+
   <div class="container">
-    <div class="p1"><h3>Naruto (X)</h3><p>Games Won: </p><span>0</span><img src="images/naruto1.png" alt=""><img class="token" src="images/naruto-logo.png" alt=""></div>
+    <div class="p1"><h3>Naruto</h3><p>Games Won: </p><span>0</span><img id="player1Pic" src="images/naruto1.png" alt=""><img class="token" src="images/naruto-logo.png" alt=""></div>
     <div class="board">
       <div class="grids" id="g0"></div>
       <div class="grids" id="g1"></div>
@@ -21,10 +31,10 @@
       <div class="grids" id="g7"></div>
       <div class="grids" id="g8"></div>
     </div>
-    <div class="p2"><h3>Sasuke (O)</h3><p>Games Won: </p><span>0</span><img src="images/sasuke.png" alt=""><img class="token" src="images/sasuke-logo.png" alt=""></div>
+    <div class="p2"><h3>Sasuke</h3><p>Games Won: </p><span>0</span><img id="player2Pic" src="images/sasuke.png" alt=""><img class="token" src="images/sasuke-logo.png" alt=""></div>
   </div>
   <div class="message">Welcome to NARUTO tic-tac-toe.</div>
-  <button>Restart</button>
+  <button id="restart">Restart</button>
   <footer>created by Robbie Cheng</footer>
   <script src="app.js"></script>
 </body>
