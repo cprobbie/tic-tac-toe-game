@@ -32,6 +32,7 @@ char1.addEventListener('click', function(){
   document.querySelector(".p1 h3").textContent = char1Name.textContent ;
   document.querySelector('#player1Pic').src ="images/naruto1.png";
   document.querySelector('#audio').play();
+
 });
 char2.addEventListener('click', function(){
   document.querySelector(".p1 h3").textContent = char2Name.textContent ;
@@ -117,7 +118,7 @@ var determineWinner = function(result, symbol) {
     || areEqual(result[6], result[7], result[8]) || areEqual(result[0], result[3], result[6])
     || areEqual(result[1], result[4], result[7]) || areEqual(result[2], result[5], result[8])
     || areEqual(result[0], result[4], result[8]) || areEqual(result[2], result[4], result[6])) {
- //   console.log(symbol + ' is the winner, this is the end of the game, thank you for playing.');
+    // console.log(symbol + ' is the winner, this is the end of the game, thank you for playing.');
     var winnerName;
     if (symbol === 'X') {
       winnerName = p1Name.textContent;
@@ -135,14 +136,14 @@ var determineWinner = function(result, symbol) {
     message.textContent = 'Round ' + roundCount + ' winner: ' + winnerName + '.  Well done!';   
 
    } else if (turnCounter === 9) {
-//    console.log('Round Draw! Good job for both sides.');
+   // console.log('Round Draw! Good job for both sides.');
     message.textContent = 'Game Draw!  Good job for both sides.'
     clearTimeout(timeOut);
    // } else {
    //  console.log('no winner yet, continue play.');
    }
   }
-// to display the token on the corresponding blocks
+ // to display the token on the corresponding blocks
 var display = function (gridObj, playerNum) {
   if (playerNum === 1) {
     gridObj.classList.add("X");
@@ -156,7 +157,7 @@ var display = function (gridObj, playerNum) {
     logResults(gridObj, symbol);
 }
 //this function to log result in an array
- var logResults = function (gridObj, symbol){
+var logResults = function (gridObj, symbol){
   for (var i = 0; i < grids.length; i++) {
     if (grids[i] == gridObj) {
       result[i] = symbol;  
