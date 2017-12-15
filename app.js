@@ -24,35 +24,32 @@ var char2Name = document.querySelector("#char2 span")
 var char3Name = document.querySelector("#char3 span")
 var char4Name = document.querySelector("#char4 span")
 var overlay = document.querySelector("#overlay")
-var startButton = document.querySelector(".title button");
+var playButton = document.querySelector(".title button");
 
 
-
+// selecting charactors
 char1.addEventListener('click', function(){
   document.querySelector(".p1 h3").textContent = char1Name.textContent ;
   document.querySelector('#player1Pic').src ="images/naruto1.png";
-
-
+  document.querySelector('#audio').play();
 });
 char2.addEventListener('click', function(){
   document.querySelector(".p1 h3").textContent = char2Name.textContent ;
   document.querySelector('#player1Pic').src ="images/sakura1.png";
-
-
+  document.querySelector('#audio').play();
 });
 char3.addEventListener('click', function(){
   document.querySelector(".p2 h3").textContent = char3Name.textContent ;
   document.querySelector('#player2Pic').src ="images/sasuke.png";
-
+  document.querySelector('#audio').play();
 });
 char4.addEventListener('click', function(){
   document.querySelector(".p2 h3").textContent = char4Name.textContent ;
   document.querySelector('#player2Pic').src ="images/Kakashi.png";
+  document.querySelector('#audio').play();
 });
 
-startButton.addEventListener('click', actionOverlay)
-
-
+//Game variables initialisation
 var p1ScoreCount = 0; 
 var p2ScoreCount = 0;
 var roundCount = 1;
@@ -62,11 +59,7 @@ var turnCounter = 0;
 var playerName;
 var hasWinner = false;
 var timeOut;
-
-function actionOverlay() {
-  overlay.classList.add('slide');
-}
-
+//Randomise starting player
 var player = Math.round(Math.random())+1;
 if (player === 1) {
     p1Block.style.backgroundColor = "yellow";
@@ -74,6 +67,22 @@ if (player === 1) {
     p2Block.style.backgroundColor = "yellow";  
   }
 
+// action functions
+var playSound = function() {
+  document.querySelector('#audio').play();
+}
+
+var playTheme = function () {
+  document.querySelector('#theme').play();
+}
+
+var removeOverlay = function() {
+  overlay.classList.add('slide');
+}
+
+var putOverlay = function() {
+  overlay.classList.remove('slide');
+}
 
 var swapPlayer = function () {
   if (player === 1) {
@@ -115,8 +124,7 @@ var areEqual = function (a, b, c) {
   }
 }
 
-var determineWinner = function(result, symbol) {
-  
+var determineWinner = function(result, symbol) {  
   // // case1: same in a row; case2: same in a column; case3: same in diagnal
   if (areEqual(result[0], result[1], result[2]) || areEqual(result[3], result[4], result[5])
     || areEqual(result[6], result[7], result[8]) || areEqual(result[0], result[3], result[6])
@@ -126,19 +134,23 @@ var determineWinner = function(result, symbol) {
     var winnerName;
     if (symbol === 'X') {
       winnerName = p1Name.textContent;
+      hasWinner = true;
       document.querySelector("#player1Pic").classList.add("bounce");
+      document.querySelector('#rasengen').play();
     } else {
       winnerName = p2Name.textContent;
+      hasWinner = true;
       document.querySelector("#player2Pic").classList.add("bounce");
+      document.querySelector('#chidori').play();
     }
     message.textContent = 'Round ' + roundCount + ' winner: ' + winnerName + '.  Well done!';   
-    return hasWinner = true;
 
    } else if (turnCounter === 9) {
 //    console.log('Round Draw! Good job for both sides.');
     message.textContent = 'Game Draw!  Good job for both sides.'
-   } else {
-    console.log('no winner yet, continue play.');
+    clearTimeout(timeOut);
+   // } else {
+   //  console.log('no winner yet, continue play.');
    }
   }
 // to display the token on the corresponding blocks
@@ -160,7 +172,8 @@ var display = function (gridObj, playerNum) {
     if (grids[i] == gridObj) {
       result[i] = symbol;  
     }    
-  } console.log(result);
+  } 
+  //console.log(result);
     if (hasWinner === false) {
     determineWinner(result, symbol);
   }
@@ -170,25 +183,26 @@ var display = function (gridObj, playerNum) {
     } else if (symbol === 'O' && hasWinner === true) {
       p2ScoreCount++;
       p2Score.textContent = p2ScoreCount;
-    }
+    } 
     return symbol
   }
 
 var timeoutWinner = function () {
   var winnerName;
   if (player === 2) {
-    winnerName = p1Name.textContent;
-    document.querySelector("#player1Pic").classList.add("bounce");
+    winnerName = p1Name.textContent;   
     p1ScoreCount++;
     p1Score.textContent = p1ScoreCount;
+    hasWinner = true;
+    document.querySelector("#player1Pic").classList.add("bounce");
   } else {
     winnerName = p2Name.textContent;
-    document.querySelector("#player2Pic").classList.add("bounce");
     p2ScoreCount++;
     p2Score.textContent = p2ScoreCount;
+    hasWinner = true;
+    document.querySelector("#player2Pic").classList.add("bounce");
   }
-    message.textContent = 'Round ' + roundCount + ' winner: ' + winnerName + '.  Well done!';   
-    return hasWinner = true;
+    message.textContent = 'Round ' + roundCount + ' winner: ' + winnerName + '.  Well done!';       
   }
 
 
@@ -204,7 +218,7 @@ var clearAll = function(){
     document.querySelector("#player1Pic").classList.remove("bounce");
     document.querySelector("#player2Pic").classList.remove("bounce");
     message.textContent = 'Round: ' + roundCount + '...  Starting with ' + playerName
-
+    // This is to change to background color for the players.
     if (player === 1) {
     p1Block.style.backgroundColor = "yellow";
     p2Block.style.backgroundColor = "white";
@@ -214,13 +228,39 @@ var clearAll = function(){
     p1Block.style.backgroundColor = "white";  
   }  
 }
-///////////////////////
+// Display token on the board
 for (var i = 0; i < grids.length; i++) {
   grids[i].addEventListener('click', function(){
   if (!hasWinner && this.classList.length === 1) {display(this, player);}
  });
 }
-restart.addEventListener('click', clearAll);
 
+// Play sound 
+for (var i = 0; i < grids.length; i++) {
+  grids[i].addEventListener('click', playSound);
+}
+
+//Start a new round
+restart.addEventListener('click', function(){
+  if (turnCounter !== 0) {clearAll()}
+});
+
+//Start a new game
+document.querySelector("#startNew").addEventListener('click', function(){
+  if (turnCounter !== 0) {
+  clearAll();
+  clearTimeout(timeOut);
+  p1ScoreCount = 0; 
+  p2ScoreCount = 0;
+  p1Score.textContent = p1ScoreCount;
+  p2Score.textContent = p2ScoreCount;
+  roundCount = 1;
+  putOverlay();
+  message.textContent = 'Round: ' + roundCount + '...  Starting with ' + playerName
+}
+});
+
+// Play button.
+playButton.addEventListener('click', removeOverlay);
 
 

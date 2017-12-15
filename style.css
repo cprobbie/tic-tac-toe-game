@@ -83,7 +83,7 @@
 }
 
 .bounce {
-  animation: bounceIn 2.5s;
+  animation: bounceIn 1s;
 }
 
 #overlay.slide {
@@ -218,13 +218,20 @@ img {
 }
 
 button {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  height: 35px;
+  width: 150px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.buttonContainer {
   display: flex;
   justify-content: center;
   margin: 0 auto;
-  height: 35px;
-  width: 100px;
-  border-radius: 10px;
-  font-size: 20px;
+  padding: 0 25% 0 25%;
 }
 
 button:hover {
@@ -237,6 +244,3 @@ footer {
   margin: 25px auto;
 }
 
-.sakura {
-
-}
