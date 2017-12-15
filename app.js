@@ -135,11 +135,13 @@ var determineWinner = function(result, symbol) {
     if (symbol === 'X') {
       winnerName = p1Name.textContent;
       hasWinner = true;
+      clearTimeout(timeOut);
       document.querySelector("#player1Pic").classList.add("bounce");
       document.querySelector('#rasengen').play();
     } else {
       winnerName = p2Name.textContent;
       hasWinner = true;
+      clearTimeout(timeOut);
       document.querySelector("#player2Pic").classList.add("bounce");
       document.querySelector('#chidori').play();
     }
