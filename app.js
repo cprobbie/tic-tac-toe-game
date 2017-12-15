@@ -136,7 +136,7 @@ var determineWinner = function(result, symbol) {
       winnerName = p1Name.textContent;
       hasWinner = true;
       document.querySelector("#player1Pic").classList.add("bounce");
-      document.querySelector('#rasengen').play();
+      document.querySelector('#rasengan').play();
     } else {
       winnerName = p2Name.textContent;
       hasWinner = true;
