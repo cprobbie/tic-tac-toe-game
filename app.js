@@ -102,20 +102,7 @@ var swapPlayer = function () {
     message.textContent = playerName + '\' turn... counting down 3 seconds.'; 
     timeOut = setTimeout(timeoutWinner, 3000); 
 }
-// var swapPlayer = function () {
-//   if (turnCounter % 2 === 1) {
-//     turnCounter++;
-//     p1Block.style.backgroundColor = "yellow";
-//     p2Block.style.backgroundColor = "white";
-//     return player = 1;
-//   } else {
-//     turnCounter++;
-//     p2Block.style.backgroundColor = "yellow";
-//     p1Block.style.backgroundColor = "white";   
-//     return player = 2;
-//   }
-  
-// }
+
 var areEqual = function (a, b, c) {
   if (a === b && b === c) {
     return true;

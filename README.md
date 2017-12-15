@@ -11,3 +11,8 @@ Six functions were created and implemented in this program.
 - display(): to display the corresponding image in the blocks as players click.
 - logResults(): to log which player has clicked and which block has been clicked, and update the result array as it goes.
 - clearAll(): reset all variables to their initial conditions.
+
+
+ 
+
+<a href="https://cprobbie23.github.io/tic-tac-toe-game/">Try it here...</a> 
