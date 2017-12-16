@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: naruto-font;
+  src: url("fonts/njnaruto.ttf");
+}
+
 #overlay {
     position: fixed;
     display: block;
@@ -181,12 +186,12 @@ h3 {
 p {
   font-size: 20px;
   margin: 5px auto;
-  font-family: 'Acme', sans-serif;
+  font-family: naruto-font/*'Acme', sans-serif*/;
 }
 
 span {
   font-size: 25px;
-  font-family: 'Acme', sans-serif;
+  font-family: naruto-font/*'Acme', sans-serif*/;
 }
 
 img {
