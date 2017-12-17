@@ -192,7 +192,7 @@ var timeoutWinner = function () {
     hasWinner = true;
     document.querySelector("#player2Pic").classList.add("bounce");
   }
-    message.textContent = 'Round ' + roundCount + ' winner: ' + winnerName + '.  Well done!';       
+    message.textContent = 'Time out... ' + 'Round ' + roundCount + ' winner: ' + winnerName;       
   }
 
 
