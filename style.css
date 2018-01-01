@@ -150,10 +150,6 @@ h1 {
   background-repeat: no-repeat;
   background-position: center;
 }
-.X2 {
-  background-image: url('images/cross.png');
-}
-
 
 .O {
   background-color: white;
@@ -161,9 +157,6 @@ h1 {
   background-size: 170px 170px;
   background-repeat: no-repeat;
   background-position: center;
-}
-.O2 {
-  background-image: url('images/circle.png');
 }
 
 .p1, .p2 {
@@ -247,9 +240,9 @@ button:hover {
   border: 2px solid black;
 }
 
-
 footer {
   text-align: center;
   margin: 25px auto;
+  font-family: naruto-font;
 }
 

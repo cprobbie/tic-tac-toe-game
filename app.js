@@ -38,6 +38,7 @@ char2.addEventListener('click', function(){
   document.querySelector(".p1 h3").textContent = char2Name.textContent ;
   document.querySelector('#player1Pic').src ="images/sakura1.png";
   document.querySelector('#audio').play();
+
 });
 char3.addEventListener('click', function(){
   document.querySelector(".p2 h3").textContent = char3Name.textContent ;
