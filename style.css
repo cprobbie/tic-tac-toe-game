@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body {
+  min-width: 1270px;
+}
+
 @font-face {
   font-family: naruto-font;
   src: url("fonts/njnaruto.ttf");
@@ -11,6 +15,7 @@
     position: fixed;
     display: block;
     width: 100%;
+    min-width: 1270px;
     height: 100%;
     top: 0;
     left: 0;
