@@ -12,4 +12,4 @@ The lessen I learned from here is that writing code is a step-by-step process, a
 <a href="https://cprobbie23.github.io/tic-tac-toe-game/">Play it here...</a> Hope you enjoy it.
 
 ### A screenshot of the game
-<img src='/images/Screenshot 2018-02-25_23-28-25'>
+<img src='https://github.com/cprobbie23/tic-tac-toe-game/blob/master/images/Screenshot%202018-02-25_23-28-25.png'>
