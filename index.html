@@ -2,7 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Naruto tic-tac-toe</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Ceviche+One|Acme|Fugaz+One" rel="stylesheet">
 </head>
@@ -12,7 +15,7 @@
   <audio id="theme" src="sounds/theme.mp3"></audio>
   <audio id="p1_jutsu" src="sounds/rasengen.mp3"></audio>
   <audio id="p2_jutsu" src="sounds/chidori.mp3"></audio>
-
+  <audio id="draw_jutsu" src="sounds/jutsu_finger.mp3"></audio> 
 
   <div id="overlay">
     <div class="charContainer">
@@ -22,6 +25,18 @@
       <span id="vs">VS</span> 
       <div class="charP2" id="char3">P2<img src="images/sasuke-head.png" alt=""><span>Sasuke</span></div>
       <div class="charP2" id="char4">P2<img src="images/kakashi-head.jpg" alt=""><span>Kakashi</span></div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="resultCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="dialog">
+      <div class="modal-content" style="border: none; background: none;">
+        <div class="modal-footer" style="border-radius: 12px; border:2px solid black;background: rgba(255, 255, 255, 0.8)">
+          <button id="restart" type="button" class="btn btn-secondary" data-dismiss="modal" onclick="playSound()">Next Round</button>
+          <button id="startNew" type="button" class="btn btn-primary" data-dismiss="modal" onclick="playSound()">Start New Game</button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -41,11 +56,17 @@
     <div class="p2"><h3>Sasuke</h3><p>Games Won: </p><span>0</span><img id="player2Pic" src="images/sasuke.png" alt=""><img class="token" id="t2" src="images/sasuke-logo.png" alt=""></div>
   </div>
   <div class="message">Welcome to NARUTO tic-tac-toe.</div>
-  <div class="buttonContainer">
+  <!-- <div class="buttonContainer">
     <button id="restart" onclick="playSound()">Next Round</button>
     <button id="startNew" onclick="playSound()">New Game</button>
-  </div>
+  </div> -->
   <footer>created by Robbie Cheng</footer>
   <script src="app.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 </body>
 </html>

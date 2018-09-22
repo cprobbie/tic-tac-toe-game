@@ -68,10 +68,10 @@ var timeOut;
 //Randomise starting player
 var player = Math.round(Math.random())+1;
 if (player === 1) {
-    p1Block.style.backgroundColor = "yellow";
-  } else {
-    p2Block.style.backgroundColor = "yellow";  
-  }
+  p1Block.style.backgroundColor = "yellow";
+} else {
+  p2Block.style.backgroundColor = "yellow";  
+}
 
 // action functions
 var playSound = function() {
@@ -131,19 +131,23 @@ var determineWinner = function(result, symbol) {
       clearTimeout(timeOut);
       document.querySelector("#player1Pic").classList.add("bounce");
       document.querySelector('#p1_jutsu').play();
+      $('#resultModal').modal({backdrop: "static"});
     } else {
       winnerName = p2Name.textContent;
       hasWinner = true;
       clearTimeout(timeOut);
       document.querySelector("#player2Pic").classList.add("bounce");
       document.querySelector('#p2_jutsu').play();
+      $('#resultModal').modal({ backdrop: "static" });
     }
-    message.textContent = 'Round ' + roundCount + ' winner: ' + winnerName + '.  Well done!';   
+    message.textContent = 'Round ' + roundCount + ' winner: ' + winnerName + '.';   
 
    } else if (turnCounter === 9) {
    // console.log('Round Draw! Good job for both sides.');
+    document.querySelector("#draw_jutsu").play();
     message.textContent = 'Game Draw!'
     clearTimeout(timeOut);
+    $('#resultModal').modal({ backdrop: "static" });
    // } else {
    //  console.log('no winner yet, continue play.');
    }
