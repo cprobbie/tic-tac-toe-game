@@ -26,12 +26,11 @@ var char4Name = document.querySelector("#char4 span")
 var overlay = document.querySelector("#overlay")
 var playButton = document.querySelector(".title button");
 
-
 // selecting charactors
 char1.addEventListener('click', function(){
   document.querySelector(".p1 h3").textContent = char1Name.textContent ;
   document.querySelector('#player1Pic').src ="images/naruto1.png";
-  document.querySelector('#p1_jutsu').src = "sounds/rasengen.mp3";
+  document.querySelector('#p1_jutsu').src = turnCounter % 2 === 0 ? "sounds/rasengen.mp3" : "sounds/Kage_Bunshin.mp3";
   document.querySelector('#audio').play();
 
 });
@@ -45,13 +44,13 @@ char2.addEventListener('click', function(){
 char3.addEventListener('click', function(){
   document.querySelector(".p2 h3").textContent = char3Name.textContent ;
   document.querySelector('#player2Pic').src ="images/sasuke.png";
-  document.querySelector('#p2_jutsu').src = "sounds/chidori.mp3";
+  document.querySelector('#p2_jutsu').src = turnCounter % 2 === 0 ? "sounds/chidori.mp3" : "sounds/Sasuke_Jutsu.mp3";
   document.querySelector('#audio').play();
 });
 char4.addEventListener('click', function(){
   document.querySelector(".p2 h3").textContent = char4Name.textContent ;
   document.querySelector('#player2Pic').src ="images/Kakashi.png";
-  document.querySelector('#p2_jutsu').src = "sounds/Kakashi_Jutsu.mp3";
+  document.querySelector('#p2_jutsu').src = turnCounter % 2 === 0 ? "sounds/Katon_Jutsu.mp3" : "sounds/Doton_Jutsu.mp3";
   document.querySelector('#audio').play();
 });
 
