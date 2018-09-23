@@ -31,7 +31,7 @@ char1.addEventListener('click', function(){
   document.querySelector(".p1 h3").textContent = char1Name.textContent ;
   document.querySelector('#player1Pic').src ="images/naruto1.png";
   document.querySelector('#p1_jutsu').src = roundCount % 2 === 0 ? "sounds/Kage_Bunshin.mp3" : "sounds/rasengen.mp3";
-  document.querySelector('#naruto_jutsu').play();
+  document.querySelector('#kage_bunshin').play();
 
 });
 char2.addEventListener('click', function(){
@@ -45,7 +45,7 @@ char3.addEventListener('click', function(){
   document.querySelector(".p2 h3").textContent = char3Name.textContent ;
   document.querySelector('#player2Pic').src ="images/sasuke.png";
   document.querySelector('#p2_jutsu').src = "sounds/chidori.mp3"
-  document.querySelector('#p2_jutsu').play();
+  document.querySelector('#sharingan').play();
 });
 char4.addEventListener('click', function(){
   document.querySelector(".p2 h3").textContent = char4Name.textContent ;
