@@ -9,7 +9,7 @@ This was my first ever javascript project which did exceed the original goal and
 
 The lessen I learned from here is that writing code is a step-by-step process, and only a solid and well-designed foundation can make maintanence and further developments easier.
 
-<a href="https://cprobbie23.github.io/tic-tac-toe-game/">Play it here...</a> Hope you enjoy it.
+<a href="https://cprobbie.github.io/tic-tac-toe-game/">Play it here...</a> Hope you enjoy it.
 
 ### A screenshot of the game
-<img src='https://github.com/robbieWorks/tic-tac-toe-game/blob/master/images/Screenshot%202018-02-25_23-28-25.png'>
+<img src='https://github.com/cprobbie/tic-tac-toe-game/blob/master/images/Screenshot%202018-02-25_23-28-25.png'>
